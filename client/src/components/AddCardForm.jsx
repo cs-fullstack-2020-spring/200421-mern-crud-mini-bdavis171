@@ -27,6 +27,10 @@ class AddCardForm extends Component {
             this.setState({ zipCode: event.target.value});
         }
     }
+    // return to homepage
+    returnHomePage = () => {
+        window.location.replace('/api');
+    }
 
     // handle submission
     handleSubmission = async(event) => {
@@ -47,6 +51,7 @@ class AddCardForm extends Component {
         });
         const json = await response.json();
         console.log(json);
+        this.returnHomePage();
     }
 
     render() { 

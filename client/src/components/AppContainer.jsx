@@ -22,7 +22,6 @@ class AppContainer extends Component {
         const response = await fetch('/api');
         const json = await response.json();
         console.table(json);
-        console.log('hello');
         this.setState({ cardList: json });
     }
 
@@ -58,28 +57,33 @@ class AppContainer extends Component {
                 <div className="card-list">
                     <fieldset>
                         <legend>List of Library Cards</legend>
-                        <Router>
-                        {this.state.cardList.map(
-                            (card) => {
-                               
-                                return (
-                                    <div key={card._id}>
-                                        
-                                            <Link to={`/api/${card.cardNumber}`}>
-                                                <p>Name: {card.name}</p>
-                                                <p>Card Number: {card.cardNumber}</p>
-                                            </Link>
-                                            <Route path={`/api/${card.cardNumber}`}>
-                                                <DisplayCard card={card}/>
-                                            </Route>
-                                       
-                                    </div>
-                                )
-                            }
-                        )}
-                        </Router>
+                        <div className="cards">
+                            <Router>
+                                {this.state.cardList.map(
+                                    (card) => {
+
+                                        return (
+                                            <div key={card._id}>
+
+                                                <Link to={`/api/${card.cardNumber}`}>
+                                                    <p>Name: {card.name}</p>
+                                                    <p>Card Number: {card.cardNumber}</p>
+                                                </Link>
+                                                <br />
+                                                <Route path={`/api/${card.cardNumber}`}>
+                                                    <DisplayCard card={card} />
+                                                </Route>
+                                                <br />
+
+                                            </div>
+                                        )
+                                    }
+                                )}
+                            </Router>
+                        </div>
                     </fieldset>
                 </div>
+
 
             </div>
         );
