@@ -1,5 +1,9 @@
 # 20-04-21 MERN CRUD Mini Project
 ## Library Card Records
+
+### All requirements met! Would have liked to se more detail on your wire frame. Nice touch with the personal styling and more comments in your client.
+### Score : 5/5 
+
 ### Workflow
 - Draw a wire frame illustrating all pages and how you can navigate from one page to the next
 - Include the wire frame in your repo
