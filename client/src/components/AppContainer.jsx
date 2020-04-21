@@ -35,6 +35,10 @@ class AppContainer extends Component {
         }
     }
 
+    // return to homepage
+    returnToHome = (event) => {
+        window.location.replace('/api');
+    }
 
 
     render() {
@@ -47,6 +51,7 @@ class AppContainer extends Component {
             <div className='home-container'>
                 <div className="header">
                     <h1>Library Card Records</h1>
+                    <button onClick={this.returnToHome}>Return to Home</button>
                 </div>
 
                 <div className="add-form">
@@ -65,9 +70,11 @@ class AppContainer extends Component {
                                         return (
                                             <div key={card._id}>
 
-                                                <Link to={`/api/${card.cardNumber}`}>
-                                                    <p>Name: {card.name}</p>
-                                                    <p>Card Number: {card.cardNumber}</p>
+                                                <Link  to={`/api/${card.cardNumber}`}>
+                                                    <button id='card-btn'>
+                                                        <p >Name: {card.name}</p>
+                                                        <p>Card Number: {card.cardNumber}</p>
+                                                    </button>
                                                 </Link>
                                                 <br />
                                                 <Route path={`/api/${card.cardNumber}`}>

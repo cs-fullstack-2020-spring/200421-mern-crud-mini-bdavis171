@@ -40,6 +40,8 @@
 .home-container{
   display: grid;
   grid-template-columns: 1fr 1fr;
+  font-weight: bolder;
+  font-size: larger;
 }
 
 .header{
@@ -55,4 +57,24 @@
 .cards{
   display: grid;
   grid-template-columns: repeat(3,1fr);
+}
+
+.form-group{
+  margin: 1%;
+}
+
+fieldset{
+  border: 3px solid purple;
+}
+
+html{
+  background-color: gray;
+}
+
+#card-btn{
+  border-radius: 10px;
+  border-color: navy;
+  background-color: blue;
+  font-size: large;
+  font-weight: bolder;
 }
